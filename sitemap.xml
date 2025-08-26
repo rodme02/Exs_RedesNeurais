@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
+         <loc>https://rodme02.github.io/Exs_RedesNeurais/</loc>
+         <lastmod>2025-08-26</lastmod>
+    </url>
+    <url>
          <loc>https://rodme02.github.io/Exs_RedesNeurais/exercises/data/ex1/main/</loc>
+         <lastmod>2025-08-26</lastmod>
+    </url>
+    <url>
+         <loc>https://rodme02.github.io/Exs_RedesNeurais/exercises/data/ex2/main/</loc>
+         <lastmod>2025-08-26</lastmod>
+    </url>
+    <url>
+         <loc>https://rodme02.github.io/Exs_RedesNeurais/exercises/data/ex3/main/</loc>
+         <lastmod>2025-08-26</lastmod>
+    </url>
+    <url>
+         <loc>https://rodme02.github.io/Exs_RedesNeurais/exercises/data/ex4/main/</loc>
          <lastmod>2025-08-26</lastmod>
     </url>
 </urlset>
