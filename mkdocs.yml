@@ -139,8 +139,6 @@ extra_css:
   - assets/stylesheets/extra.css
 
 nav:
-  - Ementa: index.md
-
   - Exercises:
     - 1. Data:
       - 1.1. Exercise 1: exercises/data/ex1/main.md
