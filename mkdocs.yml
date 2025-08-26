@@ -142,4 +142,4 @@ nav:
   - Ementa: index.md
 
   - Exercises:
-    - 1. Data: ./exercises/data/main.md
+    - 1. Data: exercises/data/main.md
