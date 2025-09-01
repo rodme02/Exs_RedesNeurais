@@ -139,5 +139,6 @@ extra_css:
   - assets/stylesheets/extra.css
 
 nav:
+  - Home: index.md
   - Exercises:
     - 1. Data: exercises/data/main.md
