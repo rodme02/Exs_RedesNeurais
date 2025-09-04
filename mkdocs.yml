@@ -109,7 +109,7 @@ markdown_extensions:
 plugins:
   - mkdocs-jupyter:
       ignore_h1_titles: true
-      execute: true
+      execute: false
       include_source: true
       exclude_input: false
       exclude_output: false
