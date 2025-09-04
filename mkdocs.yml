@@ -107,6 +107,14 @@ markdown_extensions:
 
 
 plugins:
+  - mkdocs-jupyter:
+      ignore_h1_titles: true
+      execute: true
+      include_source: true
+      exclude_input: false
+      exclude_output: false
+      exclude_markdown: false
+      include_source: true
   - glightbox
   - git-revision-date-localized:
       enable_creation_date: true
@@ -137,8 +145,9 @@ extra_css:
   - assets/stylesheets/neoteroi-mkdocs.min.css
   - assets/stylesheets/neoteroi-timeline.css
   - assets/stylesheets/extra.css
+  - css/math.css
 
 nav:
   - Home: index.md
   - Exercises:
-    - 1. Data: exercises/data/main.md
+    - 1. Data: exercises/data/notebook.ipynb
