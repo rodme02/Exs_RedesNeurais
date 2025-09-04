@@ -8,30 +8,22 @@ repo_name: rodme02/Exs_RedesNeurais
 theme:
   name: material
   palette:
-    # primary: grey
-    # Light mode
     - scheme: default
       primary: grey
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
-
-    # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
       primary: grey
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-
-    # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default 
       primary: grey
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
-
-    # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       primary: grey
       scheme: slate
@@ -49,7 +41,6 @@ theme:
     - navigation.path
     - navigation.tracking
   icon:
-    # logo: assets/images/devops
     admonition:
       note: fontawesome/solid/note-sticky
       abstract: fontawesome/solid/book
@@ -105,15 +96,10 @@ markdown_extensions:
   - pymdownx.tilde
   - tables
 
-
 plugins:
   - mkdocs-jupyter:
       ignore_h1_titles: true
       execute: false
-      include_source: true
-      exclude_input: false
-      exclude_output: false
-      exclude_markdown: false
       include_source: true
   - glightbox
   - git-revision-date-localized:

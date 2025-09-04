@@ -2,7 +2,7 @@
 
 **Rodrigo Paoliello de Medeiros**
 
-## Entregas
+## Deliverables
 
 - [x] Data Exercise - 05/09
 - [ ] Perceptron Exercise - 12/09
