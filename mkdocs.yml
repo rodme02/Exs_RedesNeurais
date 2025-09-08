@@ -137,3 +137,4 @@ nav:
   - Home: index.md
   - Exercises:
     - 1. Data: exercises/data/notebook.ipynb
+    - 2. Perceptron: exercises/perceptron/notebook.ipynb
