@@ -5,7 +5,7 @@
 ## Deliverables
 
 - [x] Data Exercise - 05/09
-- [ ] Perceptron Exercise - 12/09
+- [x] Perceptron Exercise - 12/09
 - [ ] MLP Exercise - 19/09
 - [ ] Classification Project - 21/09
 - [ ] Metrics Exercise - 17/10
