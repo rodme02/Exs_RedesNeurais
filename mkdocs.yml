@@ -138,3 +138,4 @@ nav:
   - Exercises:
     - 1. Data: exercises/data/notebook.ipynb
     - 2. Perceptron: exercises/perceptron/notebook.ipynb
+    - 3. MLP: exercises/mlp/notebook.ipynb
