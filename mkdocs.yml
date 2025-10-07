@@ -141,4 +141,4 @@ nav:
     - 3. MLP: exercises/mlp/notebook.ipynb
 
   - Projects:
-    - 1. CNN: projects/classification/notebook.ipynb
+    - 1. Classification: projects/classification/notebook.ipynb
