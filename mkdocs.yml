@@ -139,6 +139,7 @@ nav:
     - 1. Data: exercises/data/notebook.ipynb
     - 2. Perceptron: exercises/perceptron/notebook.ipynb
     - 3. MLP: exercises/mlp/notebook.ipynb
+    - 4. VAE: exercises/VAE/notebook.ipynb
 
   - Projects:
     - 1. Classification: projects/classification/notebook.ipynb

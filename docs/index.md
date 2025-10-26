@@ -7,7 +7,7 @@
 - [x] Data Exercise
 - [x] Perceptron Exercise
 - [x] MLP Exercise
-- [ ] Classification Project
-- [ ] Metrics Exercise
-- [ ] Regression Project
+- [X] Classification Project
+- [X] VAE Exercise
+- [X] Regression Project
 - [ ] Generative Models Project

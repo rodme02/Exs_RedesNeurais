@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/rodri/Documents/Insper/9_semestre/RedesNeurais/Exs_RedesNeurais/docs/projects/classification/**)",
+      "Bash(python:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
