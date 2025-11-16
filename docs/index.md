@@ -10,4 +10,4 @@
 - [X] Classification Project
 - [X] VAE Exercise
 - [X] Regression Project
-- [ ] Generative Models Project
+- [X] Generative Models Project

@@ -144,3 +144,4 @@ nav:
   - Projects:
     - 1. Classification: projects/classification/notebook.ipynb
     - 2. Regression: projects/regression/notebook.ipynb
+    - 3. Generative: projects/generative/notebook.ipynb
