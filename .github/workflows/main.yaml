@@ -32,6 +32,74 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      # --- NEW: install nbformat for the sanitizer ---
+      - name: Install sanitizer dependency
+        run: pip install nbformat
+
+      # --- NEW: sanitize notebooks to remove widget-view outputs that break nbconvert ---
+      - name: Sanitize notebooks (remove widget-view outputs, keep images)
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import nbformat
+          from nbformat import NO_CONVERT
+          from nbformat.v4 import new_output
+
+          GLOB = "docs/**/*.ipynb"
+          BACKUP = True
+
+          def sanitize_notebook(p):
+              nb = nbformat.read(str(p), as_version=NO_CONVERT)
+              changed = False
+              removed = 0
+              kept_text = 0
+              for ci, cell in enumerate(nb.cells):
+                  outputs = cell.get("outputs", []) or []
+                  # does cell already contain images?
+                  has_image = any(isinstance(o.get("data", {}), dict) and ("image/png" in o["data"] or "image/jpeg" in o["data"]) for o in outputs)
+                  new_outputs = []
+                  for out in outputs:
+                      data = out.get("data", {}) or {}
+                      widget_keys = [k for k in data.keys() if isinstance(k, str) and k.startswith("application/vnd.jupyter.widget-view")]
+                      if widget_keys:
+                          if has_image:
+                              # drop widget-view entirely (images already present)
+                              removed += 1
+                              changed = True
+                              continue
+                          else:
+                              # keep text/plain if available, else drop
+                              if "text/plain" in data and data.get("text/plain"):
+                                  txt = data["text/plain"]
+                                  new_outputs.append(new_output(output_type="display_data", data={"text/plain": txt}, metadata={}))
+                                  kept_text += 1
+                                  changed = True
+                                  continue
+                              else:
+                                  removed += 1
+                                  changed = True
+                                  continue
+                      else:
+                          new_outputs.append(out)
+                  if new_outputs != outputs:
+                      cell["outputs"] = new_outputs
+              if changed:
+                  if BACKUP:
+                      bak = p.with_suffix(p.suffix + ".bak")
+                      if not bak.exists():
+                          bak.write_bytes(p.read_bytes())
+                  nbformat.write(nb, str(p))
+              return changed, removed, kept_text
+
+          total_changed = 0
+          for p in sorted(Path('.').glob(GLOB)):
+              changed, removed, kept_text = sanitize_notebook(p)
+              if changed:
+                  print(f"Sanitized {p} (removed widget outputs: {removed}, kept text fallbacks: {kept_text})")
+                  total_changed += 1
+          print(f"Total notebooks sanitized: {total_changed}")
+          PY
+
       - name: Deploy MkDocs site
         run: mkdocs gh-deploy --clean --force
         env:
